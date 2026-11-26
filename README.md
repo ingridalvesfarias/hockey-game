@@ -4,6 +4,12 @@ Jogo arcade de **Air Hockey** desenvolvido com **HTML5 Canvas**, **Tailwind CSS*
 
 ---
 
+## 📸 Preview
+
+Acesse: https://hockey-azure-seven.vercel.app/
+
+<img src="img/imagem do projeto.png" alt="imagem do projeto">
+
 ## Funcionalidades Principais
 
 - **Modo vs. Inteligência Artificial:** Três níveis de dificuldade (**Fácil**, **Médio** e **Difícil**) com variação de velocidade de reação, margem de erro e antecipação de rebotes nas bordas.
