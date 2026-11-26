@@ -202,9 +202,7 @@
 
     <!-- Cabeçalho Superior / HUD Responsivo -->
     <header class="w-full max-w-6xl mx-auto px-2.5 sm:px-5 pt-2 pb-1 flex flex-col gap-1.5 z-20 shrink-0">
-        <!-- Linha 1: Marca, Placar Limpo e Botões -->
         <div class="w-full flex items-center justify-between gap-2">
-            <!-- Marca e Badge (Badge só aparece em telas md+ nesta linha para nunca espremer o placar) -->
             <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
                 <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#00f3ff] shadow-[0_0_10px_#00f3ff] shrink-0"></div>
                 <h1
@@ -217,7 +215,6 @@
                 </span>
             </div>
 
-            <!-- Placar Central Compacto e Sempre Legível -->
             <div id="hud-scoreboard"
                 class="flex items-center justify-center gap-2 sm:gap-5 bg-slate-900/95 border border-white/15 px-3 sm:px-5 py-1 rounded-full shadow-lg shrink-0">
                 <div class="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
@@ -235,9 +232,7 @@
                 </div>
             </div>
 
-            <!-- Controles Rápidos -->
             <div class="flex items-center gap-1 sm:gap-2 shrink-0">
-                <!-- Indicador de Sala Online (Desktop) -->
                 <div id="online-status-pill"
                     class="hidden items-center gap-1 px-2 py-1 rounded-lg bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-[10px] sm:text-xs font-orbitron whitespace-nowrap">
                     <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
@@ -290,7 +285,6 @@
             </div>
         </div>
 
-        <!-- Linha 2 (Apenas Mobile/Tablet): Sub-barra centralizada para o Modo e Meta de Gols -->
         <div id="hud-mobile-subbar" class="hidden md:hidden w-full flex items-center justify-center">
             <span id="hud-badge-mobile"
                 class="inline-flex items-center text-[10px] font-orbitron font-bold uppercase tracking-widest px-3 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-400/30">
@@ -362,15 +356,15 @@
 
                     <div
                         class="bg-slate-900/95 border-2 border-[#00f3ff]/50 rounded-2xl p-4 mb-4 flex items-center justify-between gap-3">
-                        <div class="text-left">
+                        <div class="text-left min-w-0">
                             <div class="text-[11px] uppercase tracking-widest text-slate-400">Código da Sala</div>
                             <div id="lobby-room-code"
-                                class="font-orbitron font-black text-3xl sm:text-4xl tracking-[0.22em] text-[#00f3ff] glow-cyan">
+                                class="font-orbitron font-black text-2xl sm:text-4xl tracking-[0.18em] sm:tracking-[0.22em] text-[#00f3ff] glow-cyan">
                                 -----
                             </div>
                         </div>
                         <button id="btn-copy-code"
-                            class="arcade-btn active-cyan px-4 py-3 rounded-xl font-orbitron font-bold text-xs uppercase flex items-center gap-1.5 shrink-0">
+                            class="arcade-btn active-cyan px-3.5 sm:px-4 py-3 rounded-xl font-orbitron font-bold text-xs uppercase flex items-center gap-1.5 shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -394,9 +388,9 @@
 
             <!-- Menu Principal Integrado -->
             <div id="start-overlay"
-                class="absolute inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center z-30 p-3 sm:p-4 overflow-y-auto">
-                <div class="glass-panel rounded-2xl p-4 sm:p-7 max-w-lg w-full border border-cyan-500/30 my-auto">
-                    <!-- Cabeçalho do Menu -->
+                class="absolute inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center z-30 p-3 sm:p-4 overflow-y-auto overflow-x-hidden">
+                <div
+                    class="glass-panel rounded-2xl p-4 sm:p-7 max-w-lg w-full border border-cyan-500/30 my-auto overflow-x-hidden">
                     <div class="text-center mb-4 sm:mb-5">
                         <div
                             class="inline-block px-3 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[#00f3ff] text-[11px] font-orbitron tracking-widest uppercase mb-1.5">
@@ -410,7 +404,6 @@
                         </p>
                     </div>
 
-                    <!-- Seletor de Modo de Jogo: vs IA | Frente a Frente (Local) | Online -->
                     <div
                         class="grid grid-cols-3 gap-1.5 mb-4 sm:mb-5 bg-slate-950/70 p-1.5 rounded-xl border border-white/10">
                         <button type="button" id="tab-mode-ai"
@@ -484,14 +477,14 @@
                         </button>
                     </div>
 
-                    <!-- PAINEL 2: MODO 2 JOGADORES FRENTE A FRENTE (MESMO APARELHO) -->
+                    <!-- PAINEL 2: MODO 2 JOGADORES FRENTE A FRENTE -->
                     <div id="panel-mode-local2p" class="hidden">
                         <div class="bg-slate-900/75 border border-emerald-400/25 rounded-xl p-3.5 sm:p-4 mb-4">
-                            <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center justify-between mb-2 gap-2">
                                 <span class="text-xs font-orbitron uppercase tracking-wider text-emerald-400">Duelo
                                     Frente a Frente</span>
                                 <span
-                                    class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 font-semibold">Sem
+                                    class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 font-semibold shrink-0">Sem
                                     Internet</span>
                             </div>
                             <p class="text-xs text-slate-300 leading-relaxed mb-3">
@@ -536,21 +529,21 @@
                     </div>
 
                     <!-- PAINEL 3: MODO MULTIPLAYER ONLINE COM AMIGO -->
-                    <div id="panel-mode-online" class="hidden">
-                        <div class="bg-slate-900/70 border border-white/10 rounded-xl p-3.5 sm:p-4 mb-4">
-                            <div class="flex items-center justify-between mb-2">
+                    <div id="panel-mode-online" class="hidden min-w-0">
+                        <div class="bg-slate-900/70 border border-white/10 rounded-xl p-3 sm:p-4 mb-3.5">
+                            <div class="flex items-center justify-between gap-2 mb-2">
                                 <span class="text-xs font-orbitron uppercase tracking-wider text-[#00f3ff]">Criar Nova
                                     Sala</span>
                                 <span class="text-[11px] text-slate-400">Você será o Ciano</span>
                             </div>
-                            <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center justify-between gap-2 mb-3">
                                 <span class="text-xs text-slate-300">Gols para vencer:</span>
-                                <div class="flex gap-1.5 ml-auto" id="online-points-selector">
+                                <div class="flex gap-1.5 shrink-0" id="online-points-selector">
                                     <button type="button" data-points="5"
-                                        class="arcade-btn active-gold px-3 py-1 rounded-lg font-orbitron font-bold text-xs text-[#ffea00]">5
+                                        class="arcade-btn active-gold px-2.5 sm:px-3 py-1 rounded-lg font-orbitron font-bold text-xs text-[#ffea00]">5
                                         Gols</button>
                                     <button type="button" data-points="10"
-                                        class="arcade-btn px-3 py-1 rounded-lg font-orbitron font-bold text-xs text-slate-300">10
+                                        class="arcade-btn px-2.5 sm:px-3 py-1 rounded-lg font-orbitron font-bold text-xs text-slate-300">10
                                         Gols</button>
                                 </div>
                             </div>
@@ -560,24 +553,26 @@
                             </button>
                         </div>
 
-                        <div class="relative flex py-1 items-center mb-4">
+                        <div class="relative flex py-1 items-center mb-3.5">
                             <div class="flex-grow border-t border-white/10"></div>
-                            <span class="flex-shrink mx-3 text-[11px] font-orbitron uppercase text-slate-500">ou entrar
+                            <span
+                                class="flex-shrink mx-2.5 text-[10px] sm:text-[11px] font-orbitron uppercase text-slate-500 whitespace-nowrap">ou
+                                entrar
                                 com código</span>
                             <div class="flex-grow border-t border-white/10"></div>
                         </div>
 
-                        <div class="bg-slate-900/70 border border-white/10 rounded-xl p-3.5 sm:p-4">
+                        <div class="bg-slate-900/70 border border-white/10 rounded-xl p-3 sm:p-4 min-w-0">
                             <label for="input-room-code"
-                                class="block text-xs font-orbitron uppercase tracking-wider text-[#ff0055] mb-2">
+                                class="block text-[11px] sm:text-xs font-orbitron uppercase tracking-wider text-[#ff0055] mb-2">
                                 Código do Amigo (5 Letras/Números)
                             </label>
-                            <div class="flex gap-2">
+                            <div class="flex flex-col sm:flex-row items-stretch gap-2 min-w-0">
                                 <input id="input-room-code" type="text" maxlength="5" placeholder="EX: A7K9P"
                                     autocomplete="off"
-                                    class="room-input flex-1 bg-slate-950 border border-white/20 focus:border-[#ff0055] rounded-xl px-3 py-2.5 font-orbitron font-bold text-center text-base sm:text-lg tracking-[0.2em] uppercase text-white outline-none" />
+                                    class="room-input w-full sm:flex-1 min-w-0 bg-slate-950 border border-white/20 focus:border-[#ff0055] rounded-xl px-3 py-2.5 font-orbitron font-bold text-center text-sm sm:text-lg tracking-[0.14em] sm:tracking-[0.2em] uppercase text-white outline-none" />
                                 <button id="btn-join-room"
-                                    class="btn-primary-magenta font-orbitron font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl tracking-wider uppercase shrink-0">
+                                    class="btn-primary-magenta w-full sm:w-auto font-orbitron font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl tracking-wider uppercase shrink-0">
                                     Entrar
                                 </button>
                             </div>
@@ -613,7 +608,6 @@
                         Domínio total na mesa de Air Hockey!
                     </p>
 
-                    <!-- Placar Final -->
                     <div
                         class="bg-slate-900/90 rounded-xl p-4 mb-5 border border-white/10 flex items-center justify-around">
                         <div>
@@ -631,7 +625,6 @@
                         </div>
                     </div>
 
-                    <!-- Estatísticas -->
                     <div class="grid grid-cols-2 gap-3 mb-6 text-left">
                         <div class="bg-slate-900/60 p-3 rounded-xl border border-white/5">
                             <div class="text-[11px] uppercase tracking-wider text-slate-400">Tacadas na Partida</div>
@@ -660,7 +653,6 @@
 
     <!-- Lógica Completa: Engine Neon Air Hockey (vs IA, 2P Local Frente a Frente e Online) -->
     <script>
-
         // ==========================================
         // 1. SISTEMA DE ÁUDIO SINTETIZADO (WEB AUDIO API)
         // ==========================================
@@ -845,7 +837,7 @@
                 this.peer = null;
                 this.conn = null;
                 this.roomCode = null;
-                this.role = null; // 'host' | 'guest'
+                this.role = null;
                 this.syncInterval = null;
                 this.prefix = 'neon-airhockey-indi-';
             }
@@ -1075,7 +1067,6 @@
             startSyncLoop() {
                 if (this.syncInterval) clearInterval(this.syncInterval);
 
-                // 60Hz (~16ms) direto via WebRTC DataChannel (baixa latência real!)
                 this.syncInterval = setInterval(() => {
                     if (!this.conn || !this.conn.open) return;
                     if (this.game.mode !== 'online') return;
@@ -1184,7 +1175,6 @@
                 this.sound = new SoundEngine();
                 this.mp = new MultiplayerManager(this);
 
-                // Modos: 'ai' | 'local2p' | 'online'
                 this.mode = 'ai';
                 this.difficulty = 'medium';
                 this.targetScore = 5;
@@ -1242,12 +1232,9 @@
                 this.shakeTime = 0;
                 this.shakeIntensity = 0;
 
-                // Teclas separadas para J1 (WASD) e J2 (Setas) no modo 2P Local
                 this.keysP1 = { up: false, down: false, left: false, right: false };
                 this.keysP2 = { up: false, down: false, left: false, right: false };
-
-                // Rastreamento Multi-Touch simultâneo (um dedo para J1, outro dedo para J2)
-                this.touchMap = new Map(); // touch.identifier -> 'p1' | 'p2'
+                this.touchMap = new Map();
 
                 this.bindEvents();
                 this.resize();
@@ -1255,9 +1242,6 @@
                 requestAnimationFrame((t) => this.loop(t));
             }
 
-            // ==========================================
-            // RESPONSIVIDADE E GEOMETRIA DA MESA
-            // ==========================================
             resize() {
                 const rect = this.container.getBoundingClientRect();
                 const cw = Math.max(280, rect.width);
@@ -1351,9 +1335,6 @@
                 return Math.min(this.tableRect.w, this.tableRect.h);
             }
 
-            // ==========================================
-            // EVENTOS DE INTERFACE, MULTI-TOUCH, MOUSE E TECLADO
-            // ==========================================
             bindEvents() {
                 window.addEventListener('resize', () => this.resize());
 
@@ -1405,7 +1386,6 @@
                 tabLocal2P.addEventListener('click', () => setActiveTab('local2p'));
                 tabOnline.addEventListener('click', () => setActiveTab('online'));
 
-                // Seletor de Dificuldade IA
                 const diffBtns = document.querySelectorAll('#difficulty-selector button');
                 diffBtns.forEach(btn => {
                     btn.addEventListener('click', () => {
@@ -1418,7 +1398,6 @@
                     });
                 });
 
-                // Seletor de Gols sincronizado entre os modos
                 const setupPointsSelector = (selectorId) => {
                     const btns = document.querySelectorAll(`#${selectorId} button`);
                     btns.forEach(btn => {
@@ -1444,19 +1423,16 @@
                 setupPointsSelector('local2p-points-selector');
                 setupPointsSelector('online-points-selector');
 
-                // Iniciar vs IA
                 document.getElementById('btn-start-ai').addEventListener('click', () => {
                     this.mode = 'ai';
                     this.startLocalMatch();
                 });
 
-                // Iniciar 2P Local Frente a Frente
                 document.getElementById('btn-start-local2p').addEventListener('click', () => {
                     this.mode = 'local2p';
                     this.startLocalMatch();
                 });
 
-                // Criar Sala Online
                 document.getElementById('btn-create-room').addEventListener('click', async () => {
                     this.sound.init();
                     const btn = document.getElementById('btn-create-room');
@@ -1477,7 +1453,6 @@
                     }
                 });
 
-                // Copiar Código da Sala
                 document.getElementById('btn-copy-code').addEventListener('click', () => {
                     const code = document.getElementById('lobby-room-code').textContent.trim();
                     const tempInput = document.createElement('input');
@@ -1502,7 +1477,6 @@
                     this.showMenu();
                 });
 
-                // Entrar na Sala Online
                 document.getElementById('btn-join-room').addEventListener('click', async () => {
                     this.sound.init();
                     const input = document.getElementById('input-room-code');
@@ -1529,7 +1503,6 @@
                     }
                 });
 
-                // Controles HUD
                 document.getElementById('btn-audio').addEventListener('click', () => {
                     const muted = this.sound.toggleMute();
                     document.getElementById('icon-sound-on').classList.toggle('hidden', muted);
@@ -1552,7 +1525,6 @@
 
                 document.getElementById('btn-back-menu').addEventListener('click', () => this.exitToMenu());
 
-                // Teclado (PC) — J1 usa WASD, J2 usa Setas no modo 2P Local; ambos controlam J1 no modo solo
                 window.addEventListener('keydown', (e) => {
                     if (e.key === 'w' || e.key === 'W') this.keysP1.up = true;
                     if (e.key === 's' || e.key === 'S') this.keysP1.down = true;
@@ -1581,7 +1553,6 @@
                     if (e.key === 'ArrowRight') this.keysP2.right = false;
                 });
 
-                // Mouse (PC): no modo 2P Local controla o lado onde o cursor está
                 this.canvas.addEventListener('mousemove', (e) => {
                     if (this.state !== 'PLAYING' && this.state !== 'COUNTDOWN') return;
                     const rect = this.canvas.getBoundingClientRect();
@@ -1602,7 +1573,6 @@
                     }
                 });
 
-                // Multi-Touch simultâneo para 2 jogadores frente a frente no celular/tablet!
                 this.canvas.addEventListener('touchstart', (e) => {
                     if (this.state !== 'PLAYING' && this.state !== 'COUNTDOWN') return;
                     const rect = this.canvas.getBoundingClientRect();
@@ -1612,7 +1582,6 @@
                         const norm = this.screenToNorm(touch.clientX - rect.left, touch.clientY - rect.top);
 
                         if (this.mode === 'local2p') {
-                            // Atribui o dedo ao jogador daquela metade da mesa
                             const side = norm.nx < 0.5 ? 'p1' : 'p2';
                             this.touchMap.set(touch.identifier, side);
                             const mallet = side === 'p1' ? this.p1 : this.p2;
@@ -1663,9 +1632,6 @@
                 }, 2600);
             }
 
-            // ==========================================
-            // FLUXO DE PARTIDA (IA, 2P LOCAL & ONLINE)
-            // ==========================================
             startLocalMatch() {
                 this.sound.init();
                 this.scoreP1 = 0;
@@ -1926,16 +1892,12 @@
                 }, 420);
             }
 
-            // ==========================================
-            // 5. FÍSICA REALISTA DE AIR HOCKEY (2D CIRCULAR)
-            // ==========================================
             update(dt) {
                 this.updateEffects(dt);
 
                 if (this.state !== 'PLAYING' && this.state !== 'COUNTDOWN') return;
 
                 if (this.mode === 'local2p') {
-                    // Ambos os batedores controlados localmente ao mesmo tempo!
                     this.updateLocalMallet(this.p1, true, dt, this.keysP1);
                     this.updateLocalMallet(this.p2, false, dt, this.keysP2);
 
@@ -2307,9 +2269,6 @@
                 overlay.classList.remove('hidden');
             }
 
-            // ==========================================
-            // 6. PARTÍCULAS E EFEITOS VISUAIS
-            // ==========================================
             spawnParticles(x, y, color, count) {
                 for (let i = 0; i < count; i++) {
                     const angle = Math.random() * Math.PI * 2;
@@ -2366,9 +2325,6 @@
                 }
             }
 
-            // ==========================================
-            // 7. RENDERIZAÇÃO DA MESA PROFISSIONAL DE AIR HOCKEY
-            // ==========================================
             draw() {
                 const ctx = this.ctx;
                 const cw = this.canvas.width / this.dpr;
@@ -2529,7 +2485,6 @@
                 ctx.fillStyle = 'rgba(0, 243, 255, 0.06)';
                 ctx.fillText(this.scoreP1, p1Pos.x, p1Pos.y);
 
-                // No modo 2P Local em celular retrato, desenha o placar do J2 invertido (180°) para leitura frente a frente
                 ctx.save();
                 ctx.translate(p2Pos.x, p2Pos.y);
                 if (this.mode === 'local2p' && this.isPortrait) {
